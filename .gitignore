@@ -365,3 +365,4 @@ FodyWeavers.xsd
 /Models/EditEasyUser.cs
 /Models/EditEasyUser.cs
 /appsettings.json
+/appsettings.Development.json
