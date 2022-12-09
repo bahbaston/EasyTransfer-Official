@@ -12,8 +12,6 @@ namespace easytransfer.Models
 
         public DbSet<EasyUser> easyuser { get; set; }
         public DbSet<TransactionHistory> transactionhistory { get; set; }
-
-       // public DbSet<EditEasyUser> easyuser { get; set; }
         public DatabaseContext(DbContextOptions<DatabaseContext> options) : base(options)
         {
 
