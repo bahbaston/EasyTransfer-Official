@@ -45,7 +45,7 @@ namespace easytransfer.Pages
             _Context.Entry(easyuser).Property(x => x.balance).IsModified = true;
             _Context.Entry(easyuser).Property(x => x.usertype).IsModified = true;
             _Context.SaveChanges();
-            return RedirectToPage("AllNormalUser");
+            return RedirectToPage("AllUsers");
         }
     }
 }
