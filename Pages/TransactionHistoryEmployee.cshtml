@@ -1,0 +1,44 @@
+﻿@page
+@using easytransfer.Models
+@model TransactionHistoryModel
+
+@if (User.Identity.IsAuthenticated)
+{
+    if (User.IsInRole("Employee"))
+    {
+        @if (Model.TransactionHistory != null)
+        {
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Sender</th>
+                        <th>Receiver</th>
+                        <th>Date</th>
+                        <th>Amount</th>
+                        <th>Transaction Type</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var transaction in TransactionHistoryModel.Where(t => t.userType == 2 && t.transactionTypeId == 1))
+                    {
+                        <tr>
+                            <td>@transaction.sender</td>
+                            <td>@transaction.receiver</td>
+                            <td>@transaction.date</td>
+                            <td>@transaction.amount</td>
+                            <td>@transaction.transactionTypeId</td>
+                        </tr>
+                    }
+                    }
+                </tbody>
+            </table>
+        }
+    }
+}
+
+@code {
+public void OnGet()
+{
+// Check if user is authenticated and is an employee
+}
+}

@@ -1,0 +1,35 @@
+﻿@page
+@using easytransfer.Models
+@model TransactionHistoryModel
+
+<div class="container">
+    <h3>Deposit Money</h3>
+    <hr />
+    <br />
+    <form method="post">
+        <div class="row">
+            <div class="col-md-4">
+                <label asp-for="TransactionHistory.sender">Sender UID</label>
+                <input asp-for="TransactionHistory.sender" class="form-control" />
+                <span class="alert-danger" asp-validation-for="TransactionHistory.sender"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label asp-for="TransactionHistory.receiver">Receiver UID</label>
+                <input asp-for="TransactionHistory.receiver" class="form-control" />
+                <span class="alert-danger" asp-validation-for="TransactionHistory.receiver"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label asp-for="TransactionHistory.amount"></label>
+                <input asp-for="TransactionHistory.amount" class="form-control" />
+                <span class="alert-danger" asp-validation-for="TransactionHistory.amount"></span>
+            </div>
+        </div>
+        <br />
+        <input type="submit" value="Deposit" class="btn btn-primary" />
+        <a class="btn btn-default" href="/AllUsers">Cancel</a>
+    </form>
+</div>
