@@ -23,5 +23,8 @@ namespace easytransfer.Models
             public DateTime transactiondate { get; set; }
 
             public int transactiontype { get; set; }
-        }
+
+
+
+    }
 }
