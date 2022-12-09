@@ -50,11 +50,6 @@ namespace easytransfer.Pages
             receiver.balance = receiver.balance + TransactionHistory.amount;
             _Context.Entry(receiver).Property(x => x.balance).IsModified = true;
 
-
-
-            //transactionhistory.sender = "kouassib1";
-            //transactionhistory.receiver = "kouassib1";
-            //transactionhistory.amount = 1000;
             transactionhistory.transactiondate = System.DateTime.Now;
             transactionhistory.transactiontype = 1;
            
