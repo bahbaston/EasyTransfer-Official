@@ -6,7 +6,13 @@
     <hr />
     <br />
     <form method="post">
-        <input asp-for="EasyUser.fullname" type="hidden" />
+        <input asp-for="EasyUser.uid" type="hidden" />
+        <div class="row">
+            <div class="col-md-4">
+                <label asp-for="EasyUser.fullname"></label>
+                <input asp-for="EasyUser.fullname" class="form-control" />
+            </div>
+        </div>
         <div class="row">
             <div class="col-md-4">
                 <label asp-for="EasyUser.username"></label>
@@ -40,6 +46,6 @@
         </div>
         <br />
         <input type="submit" value="Save" class="btn btn-primary" />
-        <a class="btn btn-default" href="/allcustomer">Cancel</a>
+        <a class="btn btn-default" href="/AllUsers">Cancel</a>
     </form>
 </div>
