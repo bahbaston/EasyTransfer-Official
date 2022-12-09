@@ -1,0 +1,63 @@
+﻿@page
+@using easytransfer.Models
+@model AllEmployeeModel
+
+
+<h2>All Employee</h2>
+
+<p>
+    <a asp-page="AddEmployee">Create New User</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayName("Full Name")
+            </th>
+            <th>
+                @Html.DisplayName("Username")
+            </th>
+            <th>
+                @Html.DisplayName("Balance")
+            </th>
+            <th>
+                @Html.DisplayName("Account Created Date")
+            </th>
+            <th>
+                @Html.DisplayName("User Type")
+            </th>
+           
+            <th>Edit | Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.easyuserList.Where(x => x.usertype == 2))
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.fullname)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.username)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.balance)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.accountcreateddate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.usertype)
+                </td>
+                 <td>
+                    <a asp-page="./EditUser" asp-route-id="@item.uid">Edit</a> |
+                    <a asp-page="./AllEmployee" onclick="return confirm
+                    ('Are you sure you want to delete this item?');"
+                       asp-page-handler="Delete" asp-route-id="@item.uid">Delete</a>
+                </td>
+           
+            </tr>
+
+}
+    </tbody>
+</table>

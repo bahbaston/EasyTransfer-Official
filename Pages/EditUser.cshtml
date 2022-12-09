@@ -1,0 +1,45 @@
+﻿@page "{id:int}"
+@using easytransfer.Models
+@model EditUserModel
+<div class="container">
+    <h3>Edit User</h3>
+    <hr />
+    <br />
+    <form method="post">
+        <input asp-for="EasyUser.fullname" type="hidden" />
+        <div class="row">
+            <div class="col-md-4">
+                <label asp-for="EasyUser.username"></label>
+                <input asp-for="EasyUser.username" class="form-control" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label asp-for="EasyUser.password"></label>
+                <input asp-for="EasyUser.password" class="form-control" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label asp-for="EasyUser.birthdate"></label>
+                <input asp-for="EasyUser.birthdate" class="form-control" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <label asp-for="EasyUser.balance"></label>
+                <input asp-for="EasyUser.balance" cl class="form-control" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label asp-for="EasyUser.usertype"></label>
+                <input asp-for="EasyUser.usertype" class="form-control" />
+            </div>
+        </div>
+        <br />
+        <input type="submit" value="Save" class="btn btn-primary" />
+        <a class="btn btn-default" href="/allcustomer">Cancel</a>
+    </form>
+</div>
