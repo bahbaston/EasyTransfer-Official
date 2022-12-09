@@ -1,4 +1,34 @@
 ﻿@page
-@model easytransfer.Pages.LoginModel
-@{
-}
+@model LoginModel
+
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+<div class="container">
+    <h3>Log In</h3>
+    <hr />
+    <br />
+    <form method="post">
+        <div class="row">
+            <div class="col-md-4">
+                <label asp-for="Input.Uid"></label>
+                <input asp-for="Input.Uid" class="form-control" />
+                <span class="alert-danger" asp-validation-for="Input.Uid"></span>
+            </div>
+        </div>
+        <br />
+
+        <div class="row">
+            <div class="col-md-4">
+                <label asp-for="Input.Password"></label>
+                <input asp-for="Input.Password" class="form-control" />
+                <span class="alert-danger" asp-validation-for="Input.Password"></span>
+            </div>
+        </div>
+        <br />
+
+     
+
+        <input type="submit" value="Log In" class="btn btn-primary" />
+    </form>
+</div>
