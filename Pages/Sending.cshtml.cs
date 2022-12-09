@@ -63,7 +63,7 @@ namespace easytransfer.Pages
             var result = _Context.Add(transactionhistory);
             _Context.SaveChanges();
 
-            return RedirectToPage("AllNormalUser");
+            return RedirectToPage("AllUsers");
         }
 
     }
