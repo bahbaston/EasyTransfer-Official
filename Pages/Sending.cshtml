@@ -12,14 +12,14 @@
     <form method="post">
         <div class="row">
             <div class="col-md-4">
-                <label asp-for="TransactionHistory.sender"></label>
+                <label asp-for="TransactionHistory.sender">Sender UID</label>
                 <input asp-for="TransactionHistory.sender" class="form-control" />
                 <span class="alert-danger" asp-validation-for="TransactionHistory.sender"></span>
             </div>
         </div>
          <div class="row">
            <div class="col-md-4">
-                <label asp-for="TransactionHistory.receiver"></label>
+                <label asp-for="TransactionHistory.receiver">Receiver UID</label>
                 <input asp-for="TransactionHistory.receiver" class="form-control" />
                 <span class="alert-danger" asp-validation-for="TransactionHistory.receiver"></span>
             </div>
