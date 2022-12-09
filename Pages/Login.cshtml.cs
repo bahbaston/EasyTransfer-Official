@@ -24,7 +24,6 @@ namespace easytransfer.Pages
         {
             public int Uid { get; set; }
             public string Password { get; set; }
-            public bool RememberMe { get; set; }
         }
 
         public void OnGet()

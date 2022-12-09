@@ -16,7 +16,7 @@ namespace easytransfer.Pages
         public Deposit Deposit { get; set; }
 
         [BindProperty]
-        public bool RememberMe { get; set; }
+        //public bool RememberMe { get; set; }
 
         DatabaseContext _Context;
 
