@@ -55,6 +55,7 @@ namespace easytransfer.Pages
                 sender = x.sender.uid,
                 receiver = x.receiver.uid,
                 amount = x.th.amount,
+                transactiontype= x.th.transactiontype,
                 transactiondate = x.th.transactiondate
             }).ToList();
         }

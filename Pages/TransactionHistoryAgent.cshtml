@@ -1,26 +1,55 @@
 ﻿@page
 @model easytransfer.Pages.TransactionListModel
 
-<h1>Transaction History</h1>
-<table>
+<h1>Transaction History For Agent Only</h1>
+<table class="table">
     <thead>
         <tr>
-            <th>Transaction ID</th>
-            <th>Sender UID</th>
-            <th>Receiver UID</th>
-            <th>Amount</th>
-            <th>Transaction Date</th>
+            <th>
+                @Html.DisplayName("Transaction id")
+            </th>
+            <th>
+                @Html.DisplayName("Sender")
+            </th>
+            <th>
+                @Html.DisplayName("Receiver")
+            </th>
+            <th>
+                @Html.DisplayName("Tranaction date")
+            </th>
+            <th>
+                @Html.DisplayName("Transaction type")
+            </th>
+            <th>
+                @Html.DisplayName("Amount")
+            </th>
+
         </tr>
     </thead>
     <tbody>
-        @foreach (var transaction in Model.TransactionList)
+        @foreach (var item in Model.TransactionList)
         {
             <tr>
-                <td>@transaction.trhisid</td>
-                <td>@transaction.sender</td>
-                <td>@transaction.receiver</td>
-                <td>@transaction.amount</td>
-                <td>@transaction.transactiondate</td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.trhisid)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.sender)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.receiver)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.transactiondate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.transactiontype)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.amount)
+                </td>
+
+
             </tr>
         }
     </tbody>
