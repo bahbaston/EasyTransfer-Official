@@ -27,7 +27,6 @@ namespace easytransfer.Pages
 
             TransactionHistoryNormalUser = new List<TransactionHistory>();
             EasyUser = new List<EasyUser>();
-
             TransactionHistoryNormalUser.AddRange(GetTransactionList());
         }
 
@@ -35,20 +34,13 @@ namespace easytransfer.Pages
         {
             var transactionsnormalusers = _context.transactionhistory.ToList();
             var users = _context.easyuser.ToList();
-
             var joined =
             from th in transactionsnormalusers
             join sender in users on th.sender equals sender.uid
             join receiver in users on th.receiver equals receiver.uid
-
             select new { th, sender, receiver };
-
-
             var choice = joined.Where(x => x.sender.usertype == 1 && x.receiver.usertype == 1);
            
-
-
-
             return choice.Select(x => new TransactionHistory
             {
                 trhisid = x.th.trhisid,
