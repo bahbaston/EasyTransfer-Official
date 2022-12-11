@@ -41,6 +41,13 @@ namespace easytransfer.Pages
                 ModelState.AddModelError(string.Empty, "Only Agent can send to normal user");
                 return;
             }
+            // Check if sender has enough balance
+            if (sender.balance < TransactionHistory.amount)
+            {
+                // Add error message
+                ModelState.AddModelError(string.Empty, "Insufficient balance");
+                return;
+            }
 
             if (!ModelState.IsValid)
             {
