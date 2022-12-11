@@ -1,0 +1,40 @@
+﻿@page
+@using Microsoft.AspNetCore.Http
+@using easytransfer.Models @*namespace*@
+@model DepositAgentModel
+
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+<div class="container">
+        <h3>Deposit Agent</h3>
+        <hr />
+        <br />
+        <form method="post">
+            <div class="row">
+                <div class="col-md-4">
+                    <label asp-for="TransactionHistory.sender">Agent UID</label>
+                    <input asp-for="TransactionHistory.sender" class="form-control" />
+                    <span class="alert-danger" asp-validation-for="TransactionHistory.sender"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <label asp-for="TransactionHistory.receiver">Normal User UID</label>
+                    <input asp-for="TransactionHistory.receiver" class="form-control" />
+                    <span class="alert-danger" asp-validation-for="TransactionHistory.receiver"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <label asp-for="TransactionHistory.amount"></label>
+                    <input asp-for="TransactionHistory.amount" class="form-control" />
+                    <span class="alert-danger" asp-validation-for="TransactionHistory.amount"></span>
+                </div>
+            </div>
+            <br />
+            <input type="submit" value="Send" class="btn btn-primary" />
+            <a class="btn btn-default" href="/TransactionHistoryAgent">Cancel</a>
+        </form>
+</div>
+    
