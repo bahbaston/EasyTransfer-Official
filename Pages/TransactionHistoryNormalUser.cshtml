@@ -1,0 +1,61 @@
+﻿@page
+@using easytransfer.Models
+@model TransactionHistoryNormalUserModel
+
+<h2>Transaction History All Normal Users</h2>
+
+<p>
+    <a asp-page="TransactionHistoryNormalUser">Transaction History Normal User</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayName("Transaction id")
+            </th>
+            <th>
+                @Html.DisplayName("Sender")
+            </th>
+            <th>
+                @Html.DisplayName("Receiver")
+            </th>
+            <th>
+                @Html.DisplayName("Tranaction date")
+            </th>
+            <th>
+                @Html.DisplayName("Transaction type")
+            </th>
+            <th>
+                @Html.DisplayName("Amount")
+            </th>
+         
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.TransactionHistoryNormalUser)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.trhisid)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.sender)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.receiver)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.transactiondate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.transactiontype)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.amount)
+                </td>
+                
+           
+            </tr>
+        }
+    </tbody>
+</table>
