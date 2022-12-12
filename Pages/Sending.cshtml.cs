@@ -65,7 +65,7 @@ namespace easytransfer.Pages
             _Context.Entry(receiver).Property(x => x.balance).IsModified = true;
 
             transactionhistory.transactiondate = System.DateTime.Now;
-            transactionhistory.transactiontype = 1;
+            transactionhistory.transactiontype = 3;
 
             var result = _Context.Add(transactionhistory);
             _Context.SaveChanges();
